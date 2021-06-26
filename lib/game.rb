@@ -1,6 +1,6 @@
 class Game
   
   def start
-    puts "Game started."
+    puts 'Game started.'
   end
 end

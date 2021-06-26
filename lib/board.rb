@@ -3,18 +3,16 @@ require_relative 'cell'
 class Board
 
   def initialize
-    @row_separator = "*---*---*---*"
-    @column_separator = "|"
+    @row_separator = '*---*---*---*'
+    @column_separator = '|'
     @cells = Array.new(9, Cell.new)
   end
-  
+
   def print_board
-    print_row_separator
-    print_row(0)
-    print_row_separator
-    print_row(1)
-    print_row_separator
-    print_row(2)
+    (0..2).each do |i|
+      print_row_separator
+      print_row(i)
+    end
     print_row_separator
   end
 
