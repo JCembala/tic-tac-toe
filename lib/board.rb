@@ -44,4 +44,15 @@ class Board
   def winner?
 
   end
+
+  def winning_possitions
+    @cells + @cells.transpose + diagonals
+  end
+
+  def diagonals
+    [
+      [get_cell(0, 0), get_cell(1, 1), get_cell(2, 2)],
+      [get_cell(0, 2), get_cell(1, 1), get_cell(2, 0)]
+    ]
+  end
 end
