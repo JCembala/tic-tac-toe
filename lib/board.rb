@@ -5,28 +5,24 @@ class Board
   def initialize
     @row_separator = '*---*---*---*'
     @column_separator = '|'
-    @cells = Array.new(9, Cell.new)
+    @cells = Array.new(3) { Array.new(3) { Cell.new } }
   end
 
   def print_board
-    (0..2).each do |i|
-      print_row_separator
-      print_row(i)
-    end
-    print_row_separator
-  end
-
-  def print_row_separator
     puts @row_separator
+
+    @cells.each do |row|
+      print @column_separator
+      row.each do |cell|
+        cell.print_cell
+        print @column_separator
+      end
+      puts
+      puts @row_separator
+    end
   end
 
-  def print_row(row_number)
-    (0..2).each do |i|
-      print @column_separator
-      @cells[i + row_number].print_cell
-    end
-    puts @column_separator
+  def put_player_sign(col, row, player)
+    @cells[row][col] = player.sign
   end
 end
-
-
