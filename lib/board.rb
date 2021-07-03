@@ -22,7 +22,11 @@ class Board
     end
   end
 
-  def put_player_sign(col, row, player)
-    @cells[row][col] = player.sign
+  def get_cell(col, row)
+    @cells[row][col]
+  end
+
+  def set_cell_value(col, row, sign)
+    @cells[row][col] = sign
   end
 end
