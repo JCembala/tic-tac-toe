@@ -29,4 +29,19 @@ class Board
   def set_cell_value(col, row, sign)
     @cells[row][col] = sign
   end
+
+  def game_over
+    return :winner if winner?
+    return :draw if draw?
+
+    false
+  end
+
+  def draw?
+    @cells.flatten.map(&:value).none_empty?
+  end
+
+  def winner?
+
+  end
 end
