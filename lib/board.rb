@@ -1,4 +1,5 @@
 require_relative 'cell'
+require_relative 'core_extensions'
 
 class Board
 
@@ -42,7 +43,11 @@ class Board
   end
 
   def winner?
-
+    winning_possitions.each do |winning_possition|
+      next if winning_possitions_values(winning_possition).all_empty?
+      return true if winning_possitions_values(winning_possition).all_same?
+    end
+    false
   end
 
   def winning_possitions
@@ -55,4 +60,9 @@ class Board
       [get_cell(0, 2), get_cell(1, 1), get_cell(2, 0)]
     ]
   end
+
+  def winning_possitions_values(winning_possition)
+    winning_possition.map(&:value)
+  end
+
 end
