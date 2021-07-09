@@ -1,7 +1,9 @@
 # Single cell with value
 class Cell
 
-  def initialize(value = '_')
+  attr_accessor :value
+
+  def initialize(value = '')
     @value = value
   end
 
