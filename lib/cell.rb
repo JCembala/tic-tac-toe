@@ -8,6 +8,6 @@ class Cell
   end
 
   def print_cell
-    print " #{@value} "
+    print @value.empty? ? '   ' : " #{@value} "
   end
 end
