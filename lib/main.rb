@@ -1,8 +1,7 @@
 require_relative 'game'
-require_relative 'board'
 
-game = Game.new
-game.start
-
-board = Board.new
-board.print_board
+puts 'Tic Tac Toe the ruby game!'
+player_one = Player.new('PlayerOne', 'X')
+player_two = Player.new('PlayerTwo', 'O')
+players = [player_one, player_two]
+Game.new(players).play
